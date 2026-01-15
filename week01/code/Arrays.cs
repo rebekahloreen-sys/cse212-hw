@@ -13,7 +13,22 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        return []; // replace this return statement with your own
+
+
+        // Creating an array to put the multiples into
+        // I first put this inside the loop, then realized I needed to put it first.
+        double[] multiples = new double[length];
+
+
+        // Creating a for loop, with the length required
+        for (int i = 0; i < length; i++)
+        {
+            // Multiplying number times i+1 to get the multiple right
+            multiples[i] = number * (i + 1);
+
+        }
+        // returning the array
+        return multiples; // replace this return statement with your own
     }
 
     /// <summary>
@@ -29,5 +44,28 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+
+        // Figured making a new list would be easier than ohter methods that I couldnt't think of.
+        // New list for rotated numbers
+        List<int> newList = new List<int>();    
+
+        // I need to add the amount from the last end of the old list to the new list
+        for (int i = data.Count - amount; i < data.Count; i++)
+        {
+            newList.Add(data[i]); 
+        }
+        // Adding the rest.
+        for (int i = 0; i < data.Count - amount; i++)
+        {
+            newList.Add(data[i]);
+        }
+        // Clearing the old list.
+        data.Clear();
+        // Adding the old list to the new list.
+        for (int i = 0; i < newList.Count; i++)
+        {
+            data.Add(newList[i]);
+        } 
+        
     }
 }
