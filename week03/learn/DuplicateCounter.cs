@@ -1,4 +1,4 @@
-﻿public class DuplicateCounter
+public class DuplicateCounter
 {
     //Count how many duplicates are in a collection of data.
 
@@ -24,7 +24,20 @@
 
     private static int CountDuplicates(int[] data)
     {
-        // Add code here.
-        return 0;
+        int[] counts = new int [101];
+        foreach (int value in data)
+        {
+            counts[value]++;
+        }
+
+        int duplicates = 0;
+        foreach (int count in counts)
+        {
+            if (count > 1)
+            {
+                duplicates += count - 1;
+            }
+        }
+        return duplicates;
     }
 }
